@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  elasticsearch717:
+    container_name: elasticsearch717
+    build:
+      context: ../../../images/elasticsearch/7.17
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ../../../volumes/elasticsearch/7.17:/usr/share/elasticsearch/data
+    ports:
+      - "43717:9200"
+      - "43718:9300"
+    environment:
+      - "discovery.type=single-node"
+      - "cluster.routing.allocation.disk.threshold_enabled=false"
+      - "index.blocks.read_only_allow_delete"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+    networks:
+      - my-dockers-network
+
+networks:
+  my-dockers-network:
+    driver: bridge

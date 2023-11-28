@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  php74:
+    container_name: php81
+    build:
+      context: ../../../images/php/8.1
+      dockerfile: ./Dockerfile
+    ports:
+      - "43981:9000"
+    restart: unless-stopped
+    volumes:
+      - ../../../volumes/php/8.1:/var/www/html/
+    networks:
+      - my-dockers-network
+
+networks:
+  my-dockers-network:
+    driver: bridge
+
