@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  opensearch25:
+    container_name: opensearch25
+    build:
+      context: ../../../images/opensearch/2.5
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ../../../volumes/opensearch/2.5:/usr/share/opensearch/data
+    ports:
+      - "43025:9200"
+      - "43125:9300"
+    environment:
+      - "discovery.type=single-node"
+      - "cluster.routing.allocation.disk.threshold_enabled=false"
+      - "index.blocks.read_only_allow_delete"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+    networks:
+      - my-dockers-network
+
+networks:
+  my-dockers-network:
+    driver: bridge
