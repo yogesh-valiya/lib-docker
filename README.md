@@ -66,13 +66,13 @@
 ### mariadb 10.4
 - Host: 0.0.0.0
 - Port: 43104
-- User: magento
+- User: root
 - Password: magento
 
 ### mariadb 10.6
 - Host: 0.0.0.0
 - Port: 43106
-- User: magento
+- User: root
 - Password: magento
 
 ## How to Debug
