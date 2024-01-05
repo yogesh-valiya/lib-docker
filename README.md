@@ -1,11 +1,11 @@
 ## Install Multiple PHP Versions with virtual host
-- https://manage.accuwebhosting.com/knowledgebase/3328/How-to-Run-Multiple-PHP-Versions-with-Nginx-on-Ubuntu.html
+- <a href="https://manage.accuwebhosting.com/knowledgebase/3328/How-to-Run-Multiple-PHP-Versions-with-Nginx-on-Ubuntu.html" target="_blank">How to Run Multiple PHP Versions with Nginx on Ubuntu</a>
 
 ## Install docker
-- https://docs.docker.com/engine/install/ubuntu/
+- <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">Install Docker on Ubuntu</a>
 
 ## Install docker-compose
-- https://docs.docker.com/compose/install/
+- <a href="https://docs.docker.com/compose/install/" target="_blank">Install Docker Compose</a>
 
 ## Available Docker Images Under This Repo
 - `elasticsearch/7.17`
@@ -77,17 +77,18 @@
 
 ## How to Debug
 ### Run manual docker-compose commands
-    - Change directory to to docker images folder `cd docker/images/<image_name>/<image_version>/`
-    - `docker-compose.yml` file is present this folder, so each `docker-compose` command are available here.
-    - Examples: 
-        - `docker-compose up`
-        - `docker-compose kill`
-        - `docker-compose remove`
-        - more details on docker-compose - https://docs.docker.com/compose/reference/
+- Change directory to to docker images folder `cd docker/images/<image_name>/<image_version>/`
+- `docker-compose.yml` file is present this folder, so each `docker-compose` command are available here.
+- Examples: 
+    - `docker-compose up`
+    - `docker-compose kill`
+    - `docker-compose remove`
+    - more details on docker-compose - https://docs.docker.com/compose/reference/
 ### Facing permission issue
-    - run `sudo chmod -R 777 docker/volumes/`
+- run `sudo chmod -R 777 docker/volumes/`
 ### Facing Docker `sudo` Access Issue
-    - `sudo groupadd docker`
-    - `sudo usermod -aG docker $USER`
-    - `sudo chown root:docker /var/run/docker.sock`
-    - `sudo chown -R root:docker /var/run/docker`
+- ![MicrosoftTeams-image - docker](https://github.com/yogesh-valiya/lib-docker/assets/66505755/61b4804d-4abe-4117-a6b1-cac2a5a44ae3)
+- `sudo groupadd docker`
+- `sudo usermod -aG docker $USER`
+- `sudo chown root:docker /var/run/docker.sock`
+- `sudo chown -R root:docker /var/run/docker`
