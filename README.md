@@ -87,7 +87,7 @@
 ### Facing permission issue
 - run `sudo chmod -R 777 docker/volumes/`
 ### Facing Docker `sudo` Access Issue
-- ![MicrosoftTeams-image - docker](https://github.com/yogesh-valiya/lib-docker/assets/66505755/61b4804d-4abe-4117-a6b1-cac2a5a44ae3)
+![image](https://github.com/yogesh-valiya/lib-docker/assets/66505755/743bcd17-88bd-4190-838d-92b03629221a)
 - `sudo groupadd docker`
 - `sudo usermod -aG docker $USER`
 - `sudo chown root:docker /var/run/docker.sock`
