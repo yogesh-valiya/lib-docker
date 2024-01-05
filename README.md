@@ -76,7 +76,7 @@
 - Password: magento
 
 ## How to Debug
-- Run manual docker-compose commands
+### Run manual docker-compose commands
     - Change directory to to docker images folder `cd docker/images/<image_name>/<image_version>/`
     - `docker-compose.yml` file is present this folder, so each `docker-compose` command are available here.
     - Examples: 
@@ -84,4 +84,10 @@
         - `docker-compose kill`
         - `docker-compose remove`
         - more details on docker-compose - https://docs.docker.com/compose/reference/
-- If facing permission issue, run `sudo chmod -R 777 docker/volumes/`
+### Facing permission issue
+    - run `sudo chmod -R 777 docker/volumes/`
+### Facing Docker `sudo` Access Issue
+    - `sudo groupadd docker`
+    - `sudo usermod -aG docker $USER`
+    - `sudo chown root:docker /var/run/docker.sock`
+    - `sudo chown -R root:docker /var/run/docker`
